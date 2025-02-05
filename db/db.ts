@@ -4,9 +4,7 @@ import mongoose from 'mongoose';
 
 dotenv.config();
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@neovault-cluster.c4uyx.mongodb.net/neovault-user-credentials
-?retryWrites=true&w=majority&appName=NeoVault-Cluster`;
-
+const uri = process.env.MONGODB_URI as string;
 
 const client = new MongoClient(uri, {
     serverApi: {
